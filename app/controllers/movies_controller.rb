@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
   end
 
   def view_detail
+    @selected = Imdb::Movie.new(params[:movie_id])
   end
 
 end

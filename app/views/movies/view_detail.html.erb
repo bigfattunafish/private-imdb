@@ -1,1 +1,12 @@
-This is movie deatils
+<h1>Movie Details: "<%= @selected.title %>"</h1>
+
+<%= image_tag(@selected.poster, size: "300x450") %>
+
+<ul>
+  <li>Title: <%= @selected.title %></li>
+  <li>Year: <%= @selected.year %></li>
+  <li>MPAA Rating:<%= @selected.title %></li>
+  <li>Plot: <%= @selected.plot %></li>
+</ul>
+
+
