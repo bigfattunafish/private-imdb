@@ -9,4 +9,7 @@
   <li>Plot: <%= @selected.plot %></li>
 </ul>
 
+<%= button_to("Save this movie!", save_it_path(movie_id: @selected.id)) %>
+<!-- <%= button_to("Fav this movie!", ) %> -->
+
 
