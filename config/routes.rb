@@ -2,6 +2,8 @@ RailsImdb::Application.routes.draw do
   root :to => 'home#index'
   resources :movies
 
+  get '/movies/new/detail' => 'movies#view_detail', as: 'view_detail'
+
 #     root        /                          home#index
 #     movies GET    /movies(.:format)          movies#index
 #            POST   /movies(.:format)          movies#create

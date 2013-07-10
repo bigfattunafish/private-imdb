@@ -1,0 +1,8 @@
+<h1>Search result</h1>
+<p>Here's a list of all the movies that matched your movie:</p>
+
+<% @result.each do |movie| %>
+  <ul>
+    <li><%= link_to(movie.title, view_detail_path(movie_id: movie.id)) %></li>
+  </ul>
+<% end %>
