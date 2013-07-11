@@ -1,3 +1,8 @@
 <ul>
-  <li><%= link_to movie.title, movie_path(movie.id) %></li>
+  <li>
+    <%= link_to movie.title, movie_path(movie.id) %>
+    <% if movie.tomatoes == 100 %>
+      (*Favorite*)
+    <% end %>
+  </li>
 </ul>

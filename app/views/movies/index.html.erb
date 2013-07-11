@@ -2,7 +2,12 @@
 <p>Here's all your saved & favorited movie list:</p>
 
 <% if @all_movies.empty? %>
-  <ul><li>You currently do not have any movies saved. Go add some movies <%= link_to("here", home_path, {method: :get}) %>.</li></ul>
+  <ul>
+    <li>
+      You currently do not have any movies saved.
+      Go add some movies <%= link_to("here", home_path, {method: :get}) %>.
+    </li>
+  </ul>
 <% else %>
   <%= render partial: 'movielist', collection: @all_movies, as: :movie %>
 <% end %>
