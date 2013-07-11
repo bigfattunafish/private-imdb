@@ -2,4 +2,7 @@
 
 <%= render partial: 'movieinfo' %>
 
+<%= button_to("Delete this movie", delete_movie_path(movie_id: @your_movie.id), {method: :delete}) %>
+<%= button_to("Edit this movie", edit_movie_path(@your_movie.id), {method: :get}) %>
+
 

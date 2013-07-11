@@ -1,0 +1,12 @@
+<h1>Edit This Movie's Information</h1>
+
+<form action="<%= update_movie_path %>" method="post">
+  <input type="text" name="title" size=30px value="<%= @movie_to_edit.title %>" autofocus> Title<br/>
+  <input type="text" name="year" size=30px value="<%= @movie_to_edit.year %>"> Year<br/>
+  <input type="text" name="plot" size=30px value="<%= @movie_to_edit.plot %>"> Plot<br/>
+  <input type="text" name="mpaa_rating" size=30px value="<%= @movie_to_edit.mpaa_rating %>"> MPAA Rating<br/>
+  <input type="number" name="tomatoes" size=30px value="<%= @movie_to_edit.tomatoes %>"> Your rating<br/>
+  <input type="hidden" name="_method" value="put">
+  <button>Edit this movie</button>
+</form>
+

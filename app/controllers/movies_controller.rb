@@ -33,12 +33,35 @@ class MoviesController < ApplicationController
       movie_to_save.poster = movie_to_pulldown.poster
       movie_to_save.save
 
-      redirect_to('/movies')
+      redirect_to movies_path
     end
     # movie_to_pulldown.cast_members
   end
 
   def saved_already
+  end
+
+  def edit
+    @movie_to_edit = Movie.find(params[:id])
+  end
+
+  def update
+    movie_to_update = Movie.find(params[:id])
+
+    movie_to_update.title = params[:title]
+    movie_to_update.year = params[:year]
+    movie_to_update.plot = params[:plot]
+    movie_to_update.mpaa_rating = params[:mpaa_rating]
+    movie_to_update.tomatoes = params[:tomatoes]
+    movie_to_update.save
+
+    redirect_to movie_path
+  end
+
+  def destroy
+    Movie.find(params[:movie_id]).destroy
+
+    redirect_to movies_path
   end
 
   def vote_up

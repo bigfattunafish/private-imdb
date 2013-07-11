@@ -14,7 +14,7 @@ RailsImdb::Application.routes.draw do
 
   get '/movies/:id/edit'      => 'movies#edit', as: 'edit_movie'
   get '/movies/:id'           => 'movies#show', as: 'movie'
-  put '/movies/:id'           => 'movies#update'
-  delete '/movies/:id'        => 'movies#destroy'
+  put '/movies/:id'           => 'movies#update', as: 'update_movie'
+  delete '/movies/:id'        => 'movies#destroy', as: 'delete_movie'
 
 end
