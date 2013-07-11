@@ -1,0 +1,8 @@
+<h1>Search Your Saved Movie List</h1>
+
+<form action="/movies/search" method="get">
+  <input type="text" name="year" placeholder="Search by year">
+  <button>Search it!</button>
+</form>
+
+<%= render partial: 'movies/movielist', collection: @movies, as: :movie %>

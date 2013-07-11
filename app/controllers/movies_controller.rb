@@ -105,4 +105,12 @@ class MoviesController < ApplicationController
     redirect_to movie_to_fav
   end
 
+  def search
+    if params[:year]
+      @movies = Movie.where(year: params[:year])
+    else
+      @movies = Movie.all
+    end
+  end
+
 end
