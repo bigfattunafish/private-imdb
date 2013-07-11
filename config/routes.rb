@@ -2,18 +2,18 @@ RailsImdb::Application.routes.draw do
   root :to => 'home#index', as: 'home'
   # resources :movies
 
-  get '/movies'           => 'movies#index', as: 'movies'
-  post '/movies/save'          => 'movies#save', as: 'save_it'
-  post '/movies/fav'          => 'movies#fav', as: 'fav_it'
-  get '/movies/new'       => 'movies#new', as: 'new_movie'
+  get '/movies'               => 'movies#index', as: 'movies'
+  post '/movies/create'       => 'movies#create', as: 'create_it'
+  # post '/movies/fav'        => 'movies#fav', as: 'fav_it'
+  get '/movies/new'           => 'movies#new', as: 'new_movie'
 
-  get '/movies/new/detail' => 'movies#view_detail', as: 'view_detail' # CUSTOM MADE
-  get '/movies/savedalready' => 'movies#saved_already', as: 'saved_already' # CUSTOM MADE
+  get '/movies/new/detail'    => 'movies#view_detail', as: 'view_detail' # CUSTOM MADE
+  get '/movies/savedalready'  => 'movies#saved_already', as: 'saved_already' # CUSTOM MADE
 
-  get '/movies/:id/edit'  => 'movies#edit', as: 'edit_movie'
-  get '/movies/:id'       => 'movies#show', as: 'movie'
-  put '/movies/:id'       => 'movies#update'
-  delete '/movies/:id'    => 'movies#destroy'
+  get '/movies/:id/edit'      => 'movies#edit', as: 'edit_movie'
+  get '/movies/:id'           => 'movies#show', as: 'movie'
+  put '/movies/:id'           => 'movies#update'
+  delete '/movies/:id'        => 'movies#destroy'
 
 
 

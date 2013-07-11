@@ -13,8 +13,9 @@ class MoviesController < ApplicationController
     @selected = Imdb::Movie.new(params[:movie_id])
   end
 
-  def save
+  def create
     movie_to_pulldown = Imdb::Movie.new(params[:movie_id])
+    tomatoes = params[:tomatoes]
 
     if Movie.all.map(&:title).include?(movie_to_pulldown.title)
       redirect_to(saved_already_path)
@@ -25,7 +26,7 @@ class MoviesController < ApplicationController
       movie_to_save.year = movie_to_pulldown.year
       movie_to_save.plot = movie_to_pulldown.plot
       movie_to_save.mpaa_rating = movie_to_pulldown.mpaa_rating
-      movie_to_save.tomatoes = 50
+      movie_to_save.tomatoes = tomatoes
       movie_to_save.save
 
       redirect_to('/movies')
