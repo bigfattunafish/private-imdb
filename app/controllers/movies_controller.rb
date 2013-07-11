@@ -1,5 +1,10 @@
 class MoviesController < ApplicationController
 
+  def index
+    @all_movies = Movie.all
+  end
+
+
   def new
     @result = Imdb::Search.new(params[:movie_searched]).movies
   end

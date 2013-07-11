@@ -1,3 +1,4 @@
-<h1>This is a movie index page</h1>
+<h1>Your Movie List</h1>
+<p>Here's all your saved & favorited movie list:</p>
 
-<%= Movie.all %>
+<%= render partial: 'movielist', collection: @all_movies, as: :movie %>
