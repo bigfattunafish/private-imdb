@@ -41,4 +41,24 @@ class MoviesController < ApplicationController
   def saved_already
   end
 
+  def vote_up
+    movie_to_vote_up = Movie.find(params[:movie_id])
+    unless movie_to_vote_up.tomatoes >= 100
+      movie_to_vote_up.tomatoes += 1
+      movie_to_vote_up.save
+    end
+
+    redirect_to movie_to_vote_up
+  end
+
+  def vote_down
+    movie_to_vote_down = Movie.find(params[:movie_id])
+    unless movie_to_vote_down.tomatoes <= 0
+      movie_to_vote_down.tomatoes -= 1
+      movie_to_vote_down.save
+    end
+
+    redirect_to movie_to_vote_down
+  end
+
 end
