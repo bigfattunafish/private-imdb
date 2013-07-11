@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration
       t.text :plot
       t.string :mpaa_rating
       t.integer :tomatoes
+      t.text :poster
       t.timestamps
     end
   end

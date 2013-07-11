@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130710201356) do
     t.text     "plot"
     t.string   "mpaa_rating"
     t.integer  "tomatoes"
+    t.text     "poster"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

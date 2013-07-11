@@ -1,0 +1,10 @@
+<%= image_tag(@your_movie.poster, size: "300x450") %>
+
+<p>Your rating: <%= @your_movie.tomatoes %></p>
+
+<p>Movie info:</p>
+<ul>
+  <li>Year: <%= @your_movie.year %></li>
+  <li>MPAA Rating: <%= @your_movie.mpaa_rating %></li>
+  <li>Plot: <%= @your_movie.plot %></li>
+</ul>

@@ -16,7 +16,6 @@ RailsImdb::Application.routes.draw do
   delete '/movies/:id'        => 'movies#destroy'
 
 
-
 #     root        /                          home#index
 #     movies GET    /movies(.:format)          movies#index
 #            POST   /movies(.:format)          movies#create

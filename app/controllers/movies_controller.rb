@@ -4,6 +4,9 @@ class MoviesController < ApplicationController
     @all_movies = Movie.all
   end
 
+  def show
+    @your_movie = Movie.find(params[:id])
+  end
 
   def new
     @result = Imdb::Search.new(params[:movie_searched]).movies
@@ -27,6 +30,7 @@ class MoviesController < ApplicationController
       movie_to_save.plot = movie_to_pulldown.plot
       movie_to_save.mpaa_rating = movie_to_pulldown.mpaa_rating
       movie_to_save.tomatoes = tomatoes
+      movie_to_save.poster = movie_to_pulldown.poster
       movie_to_save.save
 
       redirect_to('/movies')
