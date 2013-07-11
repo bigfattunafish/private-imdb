@@ -7,8 +7,9 @@ RailsImdb::Application.routes.draw do
   # post '/movies/fav'        => 'movies#fav', as: 'fav_it'
   get '/movies/new'           => 'movies#new', as: 'new_movie'
 
-  put '/movies/voteup'  => 'movies#vote_up', as: 'vote_up'
-  put '/movies/votedown'  => 'movies#vote_down', as: 'vote_down'
+  put '/movies/voteup'        => 'movies#vote_up', as: 'vote_up'
+  put '/movies/votedown'      => 'movies#vote_down', as: 'vote_down'
+  put '/movies/favit'         => 'movies#fav_it', as: 'fav_it'
   get '/movies/new/detail'    => 'movies#view_detail', as: 'view_detail'
   get '/movies/savedalready'  => 'movies#saved_already', as: 'saved_already'
 

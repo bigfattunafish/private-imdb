@@ -84,4 +84,12 @@ class MoviesController < ApplicationController
     redirect_to movie_to_vote_down
   end
 
+  def fav_it
+    movie_to_fav = Movie.find(params[:movie_id])
+    movie_to_fav.tomatoes = 100
+    movie_to_fav.save
+
+    redirect_to movie_to_fav
+  end
+
 end

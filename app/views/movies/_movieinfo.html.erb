@@ -3,6 +3,7 @@
 <p>Your rating: <%= @your_movie.tomatoes %></p>
 <%= button_to("Vote up", vote_up_path(movie_id: @your_movie.id), {method: :put}) %>
 <%= button_to("Vote down", vote_down_path(movie_id: @your_movie.id), {method: :put}) %>
+<%= button_to("Make this favorite", fav_it_path(movie_id: @your_movie.id), {method: :put}) %>
 
 <p>Movie info:</p>
 <ul>
