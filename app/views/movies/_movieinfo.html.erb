@@ -10,4 +10,10 @@
   <li>Year: <%= @your_movie.year %></li>
   <li>MPAA Rating: <%= @your_movie.mpaa_rating %></li>
   <li>Plot: <%= @your_movie.plot %></li>
+  <li>Main Actors: </li>
+    <% @your_movie.actors.slice(0, 10).each do |actor| %>
+    <ul>
+      <li><%= actor.name %></li>
+    </ul>
+    <% end %>
 </ul>

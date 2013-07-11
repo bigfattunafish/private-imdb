@@ -1,10 +1,8 @@
 RailsImdb::Application.routes.draw do
   root :to => 'home#index', as: 'home'
-  # resources :movies
 
   get '/movies'               => 'movies#index', as: 'movies'
   post '/movies/create'       => 'movies#create', as: 'create_it'
-  # post '/movies/fav'        => 'movies#fav', as: 'fav_it'
   get '/movies/new'           => 'movies#new', as: 'new_movie'
 
   put '/movies/voteup'        => 'movies#vote_up', as: 'vote_up'

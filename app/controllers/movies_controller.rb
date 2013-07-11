@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
   def create
     movie_to_pulldown = Imdb::Movie.new(params[:movie_id])
     tomatoes = params[:tomatoes]
+    actors_in_movie = movie_to_pulldown.cast_members
 
     if Movie.all.map(&:title).include?(movie_to_pulldown.title)
       redirect_to(saved_already_path)
@@ -31,11 +32,21 @@ class MoviesController < ApplicationController
       movie_to_save.mpaa_rating = movie_to_pulldown.mpaa_rating
       movie_to_save.tomatoes = tomatoes
       movie_to_save.poster = movie_to_pulldown.poster
+
+      actors_in_movie.each do |actor|
+        if Actor.where(name: actor).first.nil?
+         new_actor = Actor.new
+         new_actor.name = actor
+         new_actor.save
+         movie_to_save.actors << new_actor
+        end
+      end
+
       movie_to_save.save
 
       redirect_to movies_path
     end
-    # movie_to_pulldown.cast_members
+
   end
 
   def saved_already
