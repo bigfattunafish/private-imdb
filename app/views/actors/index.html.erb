@@ -1,0 +1,13 @@
+<h1>Associated Actors List</h1>
+<p>Here's a list of all actors associated with your saved movies:</p>
+
+<% if @all_actors.empty? %>
+  <ul>
+    <li>
+      There aren't any movies saved hence no associated actors.
+      Go add some movies <%= link_to("here", home_path, {method: :get}) %>.
+    </li>
+  </ul>
+<% else %>
+  <%= render partial: 'actorlist', collection: @all_actors, as: :actor %>
+<% end %>

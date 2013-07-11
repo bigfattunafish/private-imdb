@@ -39,6 +39,8 @@ class MoviesController < ApplicationController
          new_actor.name = actor
          new_actor.save
          movie_to_save.actors << new_actor
+        else
+         movie_to_save.actors << Actor.where(name: actor).first
         end
       end
 

@@ -13,7 +13,7 @@
   <li>Main Actors: </li>
     <% @your_movie.actors.slice(0, 10).each do |actor| %>
     <ul>
-      <li><%= actor.name %></li>
+      <li><%= link_to actor.name, actor_path(actor.id) %></li>
     </ul>
     <% end %>
 </ul>
